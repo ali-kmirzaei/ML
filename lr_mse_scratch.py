@@ -1,21 +1,6 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-# from numpy.core.fromnumeric import mean
-from sklearn.model_selection import train_test_split
-
-################################################################################################################
-# Here we use MSE loss function for linear regression!
-################################################################################################################
-# PreProcessing :
-
-# main_dataset = pd.read_csv("train.csv")
-# X = np.array(main_dataset['GrLivArea']).reshape((-1, 1))
-# y = np.array(main_dataset['SalePrice']).reshape((-1, 1))
-# X_train, X_test, y_train, y_test = train_test_split(X, y)
-# train = [X_train, y_train]
-# test = [X_test, y_test]
-# data = train
 
 # ################################################################################################################
 # Main funcs:
