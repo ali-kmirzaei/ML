@@ -12,7 +12,7 @@ def loss_function(m, b, points):
         X = points[0][i]
         y = points[1][i]
         total_error += (y - (m * X + b)) ** 2
-    # total_error = int(total_error)/int(n)
+    total_error = total_error/n
     return total_error
 
 def gradient_descent(m_now, b_now, points, L):
