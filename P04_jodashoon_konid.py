@@ -63,13 +63,11 @@ greens = [
 ]
 w = [20, -10, -2, 2, 2] # random vector
 epoche_number = 10
-epoche_means = list()
 
 # TRAIN
 for i in range(epoche_number):
     w = train(reds, w, t=0)
     w = train(greens, w, t=1)
-    epoche_means.append(np.mean(w))
     print(w)
     print('--------------------------------------------------')
 
@@ -84,10 +82,19 @@ else:
 print('--------------------------------------------------')
 
 
-# PLOT EPOCHES
-x = np.arange(epoche_number)
-y = epoche_means
+# PLOT RESULT
+reds1 = [4, 6, 5, 5, 7]
+reds2 = [0, -1, 1, 2, 1]
 
-plt.plot(x, y)
-plt.xlabel(['epoche mean', 'epoches number'], fontdict=None, labelpad=None)
+greens1 = [2, 3, 2, 9, 8, 12]
+greens2 = [4, 3, -2, 2, -3, -4]
+
+plt.plot(reds1, reds2, 'ro')
+plt.plot(greens1, greens2, 'go')
+x1 = np.linspace(-12.0, 12.0, 100)
+x2 = np.linspace(-12.0, 12.0, 100)
+X1, X2 = np.meshgrid(x1,x2)
+F = w[0] + w[1]*X1 + w[2]*X2 + w[3]*(X1**2) + w[4]*(X2**2)
+plt.contour(X1, X2, F,[0])
+plt.axis('equal')
 plt.show()
